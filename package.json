@@ -1,0 +1,21 @@
+{
+  "name": "bankrr",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development tailwindcss -i ./src/css/style.css -o ./dist/style.css --watch --verbose",
+    "prod": "NODE_ENV=production tailwindcss -i ./src/css/style.css -o ./dist/style.css --verbose"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^10.2.6",
+    "postcss": "^8.3.5",
+    "tailwindcss": "^2.2.4"
+  },
+  "dependencies": {
+    "@tailwindcss/forms": "^0.3.3"
+  }
+}
