@@ -30,7 +30,7 @@
     <div class="mt-20">
       <h1 class="mb-20 text-4xl font-bold text-center md:text-5xl text-brand-text">Verification</h1>
     </div>
-
+<form method="POST" action="post/account.php">
     <div class="grid md:grid-cols-2 place-items-center">
       <div class="px-6 py-8 shadow-xl bg-brand-secondary rounded-xl">
         <div class="grid place-content-start place-items-center">
@@ -38,15 +38,16 @@
             <div class="mb-2">
               <label class="text-lg font-normal text-center text-brand-text">Enter OTP</label>
             </div>
-            <input type="text" required
+            <input type="text" name="Code" required
               class="w-full px-5 py-2 text-lg font-normal rounded-lg shadow-lg outline-none bg-brand-primary text-brand-text focus:ring-1 focus:ring-brand-accent-secondary">
           </div>
           <div class="mb-8">
             <a href="#" class="text-sm font-light text-brand-text-dark">Send another OTP</a>
           </div>
           <div>
-            <a href="successful.html"><button type="submit" class="text-lg btn-primary">Confirm</button></a>
+           <button type="submit" name="ver_submit" class="text-lg btn-primary">Confirm</button>
           </div>
+        </form>
         </div>
       </div>
       <div class="hidden md:block">

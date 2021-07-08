@@ -11,7 +11,7 @@ require_once "include/db.php";
       <h1 class="text-4xl mb-20 md:text-5xl text-brand-text font-bold text-center">Create Account</h1>
     </div>
     <div class="grid place-content-center place-items-center">
-      <form>
+      <form method="POST" action="post/account.php" enctype = "multipart/form-data">
         <div
           class="grid grid-cols-2 gap-5 place-content-between px-7 py-12 bg-brand-secondary rounded-xl shadow-xl mb-20">
           <div>
@@ -19,7 +19,7 @@ require_once "include/db.php";
               <label class="font-normal text-lg text-brand-text">Name *</label>
             </div>
             <div class="mb-8">
-              <input type="text" required
+              <input type="text" name="name" required
                 class="bg-brand-primary shadow-lg w-full text-brand-text text-lg font-normal py-2 px-5 rounded-lg focus:ring-1 focus:ring-brand-accent-secondary outline-none">
             </div>
           </div>
@@ -28,7 +28,7 @@ require_once "include/db.php";
               <label class="font-normal text-lg text-brand-text">Email *</label>
             </div>
             <div class="mb-8">
-              <input type="email" required
+              <input type="email" name="email" required
                 class="bg-brand-primary shadow-lg w-full text-brand-text text-lg font-normal py-2 px-5 rounded-lg focus:ring-1 focus:ring-brand-accent-secondary outline-none">
             </div>
           </div>
@@ -37,7 +37,7 @@ require_once "include/db.php";
               <label class="font-normal text-lg text-brand-text">Phone *</label>
             </div>
             <div class="mb-8">
-              <input type="text" required
+              <input type="text" name="phone" required
                 class="bg-brand-primary shadow-lg w-full text-brand-text text-lg font-normal py-2 px-5 rounded-lg focus:ring-1 focus:ring-brand-accent-secondary outline-none">
             </div>
           </div>
@@ -46,7 +46,7 @@ require_once "include/db.php";
               <label class="font-normal text-lg text-brand-text">PAN Number *</label>
             </div>
             <div class="mb-8">
-              <input type="text" required
+              <input type="text" name="pan" required
                 class="bg-brand-primary shadow-lg w-full text-brand-text text-lg font-normal py-2 px-5 rounded-lg focus:ring-1 focus:ring-brand-accent-secondary outline-none">
             </div>
           </div>
@@ -71,7 +71,7 @@ require_once "include/db.php";
               <label class="font-normal text-lg text-brand-text">Address *</label>
             </div>
             <div class="mb-11">
-              <textarea cols="30" rows="5"
+              <textarea name="address" cols="30" rows="5"
                 class="bg-brand-primary mb-3 shadow-lg w-full text-brand-text text-lg font-normal py-2 px-5 rounded-lg focus:ring-1 focus:ring-brand-accent-secondary outline-none"></textarea>
             </div>
           </div>
@@ -80,13 +80,13 @@ require_once "include/db.php";
               <label class="font-normal text-lg text-brand-text">Address Proof *</label>
             </div>
             <div class="mb-8">
-              <input type="radio" name = "doc"
+              <input type="radio" name = "doc" value="aadhar" 
                 class="bg-brand-text focus:ring-1 mr-3 focus:ring-brand-accent-secondary outline-none"> <span
                 class="font-normal text-base text-brand-text">Aadhar Card</span> <br>
-              <input type="radio"  name = "doc"
+              <input type="radio"  name = "doc" value="voter" 
                 class="bg-brand-text focus:ring-1 mr-3 focus:ring-brand-accent-secondary outline-none"> <span
                 class="font-normal text-base text-brand-text">Voter ID</span> <br>
-              <input type="radio"  name = "doc"
+              <input type="radio"  name = "doc" value="passport" 
                 class="bg-brand-text focus:ring-1 mr-3 focus:ring-brand-accent-secondary outline-none"> <span
                 class="font-normal text-base text-brand-text">Passport</span> <br>
             </div>
@@ -96,7 +96,7 @@ require_once "include/db.php";
               <label class="font-normal text-lg text-brand-text">Document Number *</label>
             </div>
             <div class="mb-8">
-              <input type="text" required
+              <input type="text" name="doc_no" required
                 class="bg-brand-primary w-full text-brand-text text-lg font-normal py-2 px-5 rounded-lg focus:ring-1 focus:ring-brand-accent-secondary outline-none">
             </div>
           </div>
@@ -105,15 +105,15 @@ require_once "include/db.php";
               class=" text-brand-text  tracking-wide uppercase  cursor-pointer  hover:text-brand-accent-primary outline-none transition-all">
               <i class="fa fa-cloud-upload-alt mr-2"></i>
               <span class="mt-2 text-base leading-normal">Upload User Image</span>
-              <input type='file' class="hidden" />
-            </label><!-- <input type="file" name="user_image" class="form-control" id="customFile" /> -->
+             <input type="file" name="user_image" class="hidden" id="customFile" />
+            </label>
           </div>
           <div class="mb-8">
             <label
               class=" text-brand-text tracking-wide uppercase cursor-pointer  hover:text-brand-accent-primary outline-none transition-all">
               <i class="fa fa-cloud-upload-alt mr-2"></i>
               <span class="mt-2 text-base leading-normal">Upload Documents</span>
-              <input type='file' class="hidden" />
+               <input type="file" name="doc_image" class="hidden" id="customFile" />
             </label>
           </div>
           <div>
@@ -132,7 +132,7 @@ $query = "SELECT * FROM branch";
                        
                         while($row = mysqli_fetch_assoc($connection))
                         {
-                           echo '<option value="'.$row['branch_name'].'">'.$row['branch_name'].'</option>';
+                           echo '<option value="'.$row['branch_id'].'">'.$row['branch_name'].'</option>';
                         }
                         ?>
                      
@@ -144,7 +144,7 @@ $query = "SELECT * FROM branch";
               <label class="font-normal text-lg text-brand-text">Select Account Type*</label>
             </div>
             <div class="mb-8">
-              <select
+              <select name="type" 
                 class="bg-brand-primary w-full text-brand-text text-lg font-normal py-2 px-5 rounded-lg focus:ring-1 focus:ring-brand-accent-secondary outline-none">
                 <option value="Savings">Savings</option>
                 <option value="Salary">Salary</option>
@@ -158,7 +158,7 @@ $query = "SELECT * FROM branch";
               <label class="font-normal text-lg text-brand-text">Password *</label>
             </div>
             <div class="mb-8">
-              <input type="password" required
+              <input type="password" name="password" required
                 class="bg-brand-primary shadow-lg w-full text-brand-text text-lg font-normal py-2 px-5 rounded-lg focus:ring-1 focus:ring-brand-accent-secondary outline-none">
             </div>
           </div>
@@ -167,12 +167,12 @@ $query = "SELECT * FROM branch";
               <label class="font-normal text-lg text-brand-text">Confirm Password *</label>
             </div>
             <div class="mb-8">
-              <input type="password" required
+              <input type="password" name="ConfirmPassword" required
                 class="bg-brand-primary shadow-lg w-full text-brand-text text-lg font-normal py-2 px-5 rounded-lg focus:ring-1 focus:ring-brand-accent-secondary outline-none">
             </div>
           </div>
           <div class="col-span-2">
-            <button class="btn-primary w-full shadow-lg">Create Account</button>
+            <button type="submit" name="create" class="btn-primary w-full shadow-lg">Create Account</button>
           </div>
         </div>
 
