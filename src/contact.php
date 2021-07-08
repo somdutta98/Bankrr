@@ -12,35 +12,35 @@
 
     <div class="grid md:grid-cols-2 md:gap-2 md:place-content-center md:place-items-center mb-20">
       <div>
-      <form id = "contact_form">
+      <form id = "contactForm" method ="POST">
           <div class="bg-brand-secondary rounded-xl py-12 shadow-xl px-10">
             <div class="mb-2">
               <label class="font-normal text-lg text-brand-text">Name *</label>
             </div>
             <div class="mb-8">
-              <input type="text" id = "userName" required
+              <input type="text" name = "userName" required
                 class="bg-brand-primary shadow-lg w-full text-brand-text text-lg font-normal py-2 px-5 rounded-lg focus:ring-1 focus:ring-brand-accent-secondary outline-none">
             </div>
             <div class="mb-2">
               <label class="font-normal text-lg text-brand-text">Email *</label>
             </div>
             <div class="mb-11">
-              <input type="email" id = "userEmail" required
+              <input type="email" name = "userEmail" required
                 class="bg-brand-primary mb-3 shadow-lg w-full text-brand-text text-lg font-normal py-2 px-5 rounded-lg focus:ring-1 focus:ring-brand-accent-secondary outline-none">
             </div>
             <div class="mb-2">
               <label class="font-normal text-lg text-brand-text">Message *</label>
             </div>
             <div class="mb-11">
-              <textarea id = "message" cols="30" rows="5"
+              <textarea name = "message" cols="30" rows="5"
                 class="bg-brand-primary mb-3 shadow-lg w-full text-brand-text text-lg font-normal py-2 px-5 rounded-lg focus:ring-1 focus:ring-brand-accent-secondary outline-none"></textarea>
             </div>
 
             <div>
-              <button class="btn-primary w-full shadow-lg" onClick="sendContact();">Send <i class="fa fa-paper-plane"></i></button>
+              <button type = "submit" id = "sub_btn" class="btn-primary w-full shadow-lg">Send <i class="fa fa-paper-plane"></i></button>
             </div>
           </div>
-          <p id = "mail-status"></p>
+          <p id = "thank_you_msg"></p>
         </form>
       </div>
 
@@ -73,23 +73,26 @@
     </div>
   </section>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js" type="text/javascript"></script>
+
 <script>
-function sendContact() {
-    jQuery.ajax({
-    url: "post/contact.php",
-    data:'userName='+$("#userName").val()+'&userEmail='+$("#userEmail").val()+'&message='+$("#message").val(),
-    type: "POST",
-    success:function(data){
-     $("#mail-status").html(data);
-     $( '#contact_form' ).each(function(){
-    this.reset();
-});
-    },
-    error:function (){}
-    });
-  
-}
-</script>
+             jQuery('#contactForm').submit(function(e){
+            jQuery('#sub_btn').val('Please wait...');
+            jQuery('#sub_btn').attr('disabled',true);
+            jQuery.ajax({
+               url:'post/contact.php',
+               type: 'post',
+               data: jQuery('#contactForm').serialize(),
+               success:function(result){
+                jQuery('#thank_you_msg').html('Thank You');
+                   jQuery('#contactForm') ['0'].reset();
+                   jQuery('#sub_btn').val('Send Message');
+                   
+
+               }
+           });
+           e.preventDefault();
+        });
+    </script>
   <script src="./script.js"></script>
 </body>
 
