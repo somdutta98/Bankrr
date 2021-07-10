@@ -38,14 +38,14 @@
             <div class="mb-2">
               <label class="text-lg font-normal text-center text-brand-text">Enter Mobile OTP</label>
             </div>
-            <input type="text" required
+            <input type="text" name="MCode"  required
               class="w-full px-5 py-2 text-lg font-normal rounded-lg shadow-lg outline-none bg-brand-primary text-brand-text focus:ring-1 focus:ring-brand-accent-secondary">
           </div>
           <div class="mb-3">
             <div class="mb-2">
               <label class="text-lg font-normal text-center text-brand-text">Enter Email OTP</label>
             </div>
-            <input type="text" name="Code" required
+            <input type="text" name="ECode" required
               class="w-full px-5 py-2 text-lg font-normal rounded-lg shadow-lg outline-none bg-brand-primary text-brand-text focus:ring-1 focus:ring-brand-accent-secondary">
           </div>
           <div class="mb-8">

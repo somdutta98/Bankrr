@@ -37,7 +37,7 @@
         </h3>
         <div class="grid place-items-center">
           <div>
-            <a href="login.html"><button class="btn-primary">Back To Login</button></a>
+            <a href="login.php"><button class="btn-primary">Back To Login</button></a>
           </div>
         </div>
       </div>

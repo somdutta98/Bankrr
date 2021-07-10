@@ -35,28 +35,53 @@ require_once "include/db.php";
     <h1 class="text-4xl mb-20 md:text-5xl text-brand-text font-bold text-center">Login <i class="fa fa-user-secret"></i>
     </h1>
 
+<?php
+if(isset($_SESSION['login_error'])){
+            $Error = $_SESSION['login_error'];
+            echo "<p style='color:red;'>".$Error."</p>";
+            unset($_SESSION['login_error']);
+        }
+
+if(isset($_SESSION['attempt'])){
+            $Error = $_SESSION['attempt'];
+            echo "<p style='color:red;'>".$Error."</p>";
+            unset($_SESSION['attempt']);
+        }
+        // if(isset($_SESSION['attempts'])){
+        //     $Error = $_SESSION['attempts'];
+        //     echo "<p style='color:red;'>".$Error."</p>";
+        //     unset($_SESSION['attempts']);
+        // }
+
+?>
+
     <div class="grid md:grid-cols-2 md:gap-2 md:place-content-center md:place-items-center">
+
       <div>
-        <form>
+       <form method="POST" action="post/login.php">
           <div class="bg-brand-secondary rounded-xl py-12 shadow-xl px-10">
             <div class="mb-2">
               <label class="font-normal text-lg text-brand-text">Email *</label>
             </div>
             <div class="mb-8">
-              <input type="email" required
+              <input type="email" name="user_email" required
                 class="bg-brand-primary shadow-lg w-full text-brand-text text-lg font-normal py-2 px-5 rounded-lg focus:ring-1 focus:ring-brand-accent-secondary outline-none">
             </div>
             <div class="mb-2">
               <label class="font-normal text-lg text-brand-text">Password *</label>
             </div>
             <div class="mb-11">
-              <input type="password" required
+              <input type="password" name="user_pass" required
                 class="bg-brand-primary mb-3 shadow-lg w-full text-brand-text text-lg font-normal py-2 px-5 rounded-lg focus:ring-1 focus:ring-brand-accent-secondary outline-none">
               <p class="text-base font-light text-right text-brand-text-dark">Forgot Password ?</p>
             </div>
 
             <div>
-              <button class="btn-primary w-full shadow-lg">Log In</button>
+             
+ <button type="submit" name="login_submit" class="btn-primary w-full shadow-lg">Log In</button>
+
+               
+             
             </div>
           </div>
         </form>
