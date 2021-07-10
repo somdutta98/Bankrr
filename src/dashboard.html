@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../dist/style.css">
+  <title>Bankrr | Dashboard</title>
+</head>
+
+<body class="bg-brand-primary">
+  <div class="flex gap-8">
+    <div class="w-24 h-auto shadow-xl md:h-screen bg-brand-secondary">
+      <a href="index.php">
+        <h1 class="py-20 pt-10 text-xl font-bold text-center text-brand-accent-primary">Bankrr</h1>
+      </a>
+
+      <div class="grid gap-10 place-content-evenly place-items-center">
+        <div class="mb-4">
+          <a href="#" class="transition-all text-brand-accent-secondary hover:text-brand-accent-primary"><i
+              class="fa fa-user fa-2x"></i></a>
+        </div>
+        <div class="mb-4">
+          <a href="#" class="transition-all text-brand-accent-secondary hover:text-brand-accent-primary"><i
+              class="fas fa-credit-card fa-2x"></i></a>
+        </div>
+        <div class="mb-4">
+          <a href="#" class="transition-all text-brand-accent-secondary hover:text-brand-accent-primary"><i
+              class="fa fa-eye fa-2x"></i></a>
+        </div>
+        <div class="mb-4">
+          <a href="#" class="transition-all text-brand-accent-secondary hover:text-brand-accent-primary"><i
+              class="fas fa-hand-holding-usd fa-2x"></i></a>
+        </div>
+        <div class="mb-4">
+          <a href="#" class="transition-all text-brand-accent-secondary hover:text-brand-accent-primary"><i
+              class="fas fa-tags fa-2x"></i></a>
+        </div>
+        <div>
+          <a href="#" class="transition-all text-brand-accent-secondary hover:text-brand-accent-primary"><i
+              class="fas fa-headphones-alt fa-2x"></i></a>
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col w-full mr-8 md:mr-0">
+      <div class="flex justify-between w-full mt-12 mb-20 md:container">
+
+        <div>
+          <h1 class="mb-3 text-2xl font-semibold md:text-3xl text-brand-text">User Dashboard</h1>
+          <h4 class="text-lg font-normal md:text-xl text-brand-text-dark">Welcome, John Doe</h4>
+        </div>
+
+        <div class="md:mr-0">
+          <a href="login.php" class="text-xl font-normal text-brand-accent-secondary"><i class="mr-2 fas fa-reply"></i>
+            Sign Out</a>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-8 md:flex-row">
+        <div class="grid w-full gap-8 md:container md:grid-cols-2">
+          <div>
+            <div class="flex justify-between mb-5">
+              <div>
+                <p class="text-xl font-medium text-brand-text">My Transactions</p>
+              </div>
+              <div>
+                <a href="#">
+                  <p class="text-sm font-light text-brand-text-dark">View All</p>
+                </a>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-3 gap-8 px-4 py-6 rounded-lg shadow-lg bg-brand-secondary md:gap-4">
+              <div class="mb-3">
+                <p class="font-medium text-center text-brand-text">FlipKart</p>
+              </div>
+              <div class="mb-3">
+                <p class="font-light text-center text-red-400">Debit</p>
+              </div>
+              <div class="mb-3">
+                <p class="font-medium text-center text-brand-accennt-primary-dark">3000 /-</p>
+              </div>
+              <div class="mb-3">
+                <p class="font-medium text-center text-brand-text">AchieveX</p>
+              </div>
+              <div class="mb-3">
+                <p class="font-light text-center text-green-400">Credit</p>
+              </div>
+              <div class="mb-3">
+                <p class="font-medium text-center text-brand-accennt-primary-dark">30000 /-</p>
+              </div>
+              <div class="mb-3">
+                <p class="font-medium text-center text-brand-text">Myntra</p>
+              </div>
+              <div class="mb-3">
+                <p class="font-light text-center text-red-400">Debit</p>
+              </div>
+              <div class="mb-3">
+                <p class="font-medium text-center text-brand-accennt-primary-dark">1900 /-</p>
+              </div>
+              <div class="mb-3">
+                <p class="font-medium text-center text-brand-text">Gpay</p>
+              </div>
+              <div class="mb-3">
+                <p class="font-light text-center text-green-400">Credit</p>
+              </div>
+              <div class="mb-3">
+                <p class="font-medium text-center text-brand-accennt-primary-dark">6000 /-</p>
+              </div>
+              <div class="mb-3">
+                <p class="font-medium text-center text-brand-text">Amazon</p>
+              </div>
+              <div class="mb-3">
+                <p class="font-light text-center text-red-400">Debit</p>
+              </div>
+              <div class="mb-3">
+                <p class="font-medium text-center text-brand-accennt-primary-dark">3000 /-</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-2 gap-4 place-items-stretch md:place-content-stretch">
+            <div class="grid px-2 py-3 rounded-lg shadow-lg place-content-center bg-brand-secondary">
+              <div>
+                <h1 class="text-lg font-medium text-center md:text-2xl text-brand-text">Current Balance</h1>
+                <p class="text-lg font-semibold text-center text-green-300 md:text-2xl">50000 /-</p>
+              </div>
+            </div>
+            <div class="grid px-2 py-3 rounded-lg shadow-lg place-content-center bg-brand-secondary">
+              <div>
+                <h1 class="text-lg font-medium text-center md:text-2xl text-brand-text">Type of Account</h1>
+                <p class="text-lg font-semibold text-center md:text-2xl text-brand-accent-secondary">Savings</p>
+              </div>
+            </div>
+            <div class="grid px-2 py-3 rounded-lg shadow-lg place-content-center bg-brand-secondary">
+              <div>
+                <h1 class="text-lg font-medium text-center md:text-2xl text-brand-text">Branch</h1>
+                <p class="text-lg font-semibold text-center md:text-2xl text-brand-accent-secondary">Lorem</p>
+              </div>
+            </div>
+            <div class="grid px-2 py-3 rounded-lg shadow-lg place-content-center bg-brand-secondary">
+              <div>
+                <h1 class="text-lg font-medium text-center md:text-2xl text-brand-text">IFSC Code</h1>
+                <p class="text-lg font-semibold text-center md:text-2xl text-brand-accent-secondary">123456789</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="flex flex-col items-center justify-between md:flex-row md:mt-8">
+            <div class="mb-3 text-xl text-brand-text">
+              Connect with us
+            </div>
+            <div>
+              <a href="#"
+                class="mx-5 text-lg font-semibold transition-all md:text-2xl text-brand-accent-secondary hover:text-brand-accent-primary"><i
+                  class="fab fa-facebook"></i></a>
+              <a href="#"
+                class="mx-5 text-lg font-semibold transition-all md:text-2xl text-brand-accent-secondary hover:text-brand-accent-primary"><i
+                  class="fab fa-linkedin"></i></a>
+              <a href="#"
+                class="mx-5 text-lg font-semibold transition-all md:text-2xl text-brand-accent-secondary hover:text-brand-accent-primary"><i
+                  class="fab fa-twitter"></i></a>
+              <a href="#"
+                class="ml-5 text-lg font-semibold transition-all md:text-2xl text-brand-accent-secondary hover:text-brand-accent-primary"><i
+                  class="fab fa-instagram"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="./script.js"></script>
+</body>
+
+</html>
