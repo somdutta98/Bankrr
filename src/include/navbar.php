@@ -3,7 +3,7 @@
     <div class="container py-4 shadow-lg lg:py-2 md:flex md:justify-between">
       <div class="flex items-center justify-between justify-items-center">
         <div>
-          <a href="/" class="text-4xl font-bold lg:text-5xl text-brand-accent-primary">Bankrr</a>
+          <a href="index.php" class="text-4xl font-bold lg:text-5xl text-brand-accent-primary">Bankrr</a>
         </div>
 
         <div class="md:hidden">
@@ -14,7 +14,7 @@
       </div>
 
       <div class="py-4 md:flex hidden md:justify-items-center md:items-center" id="links">
-        <a href="#home"
+        <a href="index.php"
           class="block mb-2 text-lg md:ml-10 font-medium md:mb-0 text-brand-text hover:text-brand-accennt-primary-dark">Home</a>
         <a href="./loans.html"
           class="block mb-2 text-lg md:ml-10 font-medium md:mb-0 text-brand-text hover:text-brand-accennt-primary-dark">Loans</a>
